@@ -1,12 +1,14 @@
 { pkgs, ... }: {
   home = rec {
     username = "dom";
-    homedirectory = "/home/${username}";
-    stateversion = "23.11";
+    homeDirectory = "/home/${username}";
+    stateVersion = "23.11";
   };
 
   programs.neovim.enable = true;
   programs.vscode.enable = true;
+  programs.rofi.enable = true;
+  programs.git.enable = true;
 
   programs.wezterm = {
    enable = true;

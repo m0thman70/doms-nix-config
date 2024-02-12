@@ -3,12 +3,23 @@
 # and in the NixOS manual (accessible by running ‘nixos-help’).
 
 { config, pkgs, ... }:
-
 {
   imports =
     [ # Include the results of the hardware scan.
       ./hardware-configuration.nix
     ];
+  
+  fonts.packages = [pkgs.terminus_font];
+
+  # Home Manager 
+  reprod = {
+    hm = {
+      enable = true;
+      users.dom = {
+        enable = true;
+      };
+    };
+  };
 
   # Bootloader.
   boot.loader.systemd-boot.enable = true;
